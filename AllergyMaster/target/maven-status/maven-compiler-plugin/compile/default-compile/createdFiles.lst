@@ -1,0 +1,16 @@
+com\cybermate\service\HabitService.class
+com\cybermate\service\AllergyService.class
+com\cybermate\repository\VitalRepository.class
+com\app\MyApplication.class
+com\cybermate\controller\AllergyController.class
+com\cybermate\entity\Vitals.class
+com\cybermate\entity\Allergy.class
+com\cybermate\repository\AllergyRepository.class
+com\cybermate\service\IVitalService.class
+com\cybermate\entity\Habits.class
+com\cybermate\repository\HabitRepository.class
+com\cybermate\service\VitalService.class
+com\cybermate\service\IAllergyService.class
+com\cybermate\service\IHabitService.class
+com\cybermate\controller\VitalController.class
+com\cybermate\controller\HabitController.class

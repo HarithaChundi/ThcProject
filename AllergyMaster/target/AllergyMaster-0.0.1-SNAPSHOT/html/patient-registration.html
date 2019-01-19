@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>TeleHealthcare</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/purple.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+	<!-- Dropzone css -->
+    <link href="../plugins/bower_components/dropzone-master/dist/dropzone.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../plugins/bower_components/html5-editor/bootstrap-wysihtml5.css" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top m-b-0">
+            <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+                <div class="top-left-part"><a class="logo" href="index.html"><b><img src="../plugins/images/thclogo.png" alt="home" /></b><span class="hidden-xs"><strong>tele</strong>healthcare</span></a></div>
+                <ul class="nav navbar-top-links navbar-left hidden-xs">
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                    <li>
+                        <form role="search" class="app-search hidden-xs">
+                            <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
+                    </li>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="../plugins/images/users/d1.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Dr. SomeName</b> </a>
+                        <ul class="dropdown-menu dropdown-user animated flipInY">
+                            <li><a href="javascript:void(0)"><i class="ti-user"></i>  My Profile</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-email"></i>  Inbox</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-settings"></i>  Account Setting</a></li>
+                            <li><a href="login.html"><i class="fa fa-power-off"></i>  Logout</a></li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
+                    <!-- /.dropdown -->
+                </ul>
+            </div>
+            <!-- /.navbar-header -->
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                        <!-- input-group -->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
+            <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+            </span> </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li> <a href="index.html" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                    <li class="nav-small-cap m-t-10"> -- Professional</li>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar p-r-10"></i> <span class="hide-menu"> Appointment <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="#">Doctor Schedule</a> </li>
+                            <li> <a href="#">Book Appointment</a> </li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> Doctors <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="#">All Doctors</a> </li>
+                            <li> <a href="#">Add Doctor</a> </li>
+                            <li> <a href="#">Edit Doctor</a> </li>
+                            <li> <a href="#">Doctor Profile</a> </li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Patients <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="#">All Patients</a> </li>
+                            <li> <a href="#">Add Patient</a> </li>
+                            <li> <a href="#">Edit Patient</a> </li>
+                            <li> <a href="#">Patient Profile</a> </li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Reports <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="#">Payment Report</a></li>
+                            <li> <a href="#">Income Report</a></li>
+                            <li> <a href="#">Sales Report</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Payments <span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="#">Payments</a></li>
+                            <li> <a href="#">Add Payment</a></li>
+                            <li> <a href="#">Patient Invoice</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="F" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">Dropdown<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                            <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                            <li> <a href="javascript:void(0)" class="waves-effect">Third Level <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Patient Registration</h4>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!--row -->
+                <div class="row">
+                    <div class="col-lg-12 col-sm-6 col-xs-12">
+                        <div class="white-box">
+                            <!-- Nav tabs -->
+                            <ul class="nav customtab nav-tabs" role="tablist">
+                                <li role="presentation" class="nav-item"><a href="#home1" class="nav-link active" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true"><span class="visible-xs"><i class="ti-home"></i></span><span class="hidden-xs"> Demographic</span></a></li>
+                                <li role="presentation" class="nav-item"><a href="#profile1" class="nav-link" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Visits</span></a></li>
+                                <li role="presentation" class="nav-item"><a href="#messages1" class="nav-link" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-email"></i></span> <span class="hidden-xs">Complaints</span></a></li>
+                                <li role="presentation" class="nav-item"><a href="#settings1" class="nav-link" aria-controls="settings" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">Allergies</span></a></li>
+								<li role="presentation" class="nav-item"><a href="#immun" class="nav-link" aria-controls="immun" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">Immunization</span></a></li>
+								<li role="presentation" class="nav-item"><a href="#family" class="nav-link" aria-controls="family" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">Family</span></a></li>
+								<li role="presentation" class="nav-item"><a href="#medication" class="nav-link" aria-controls="medication" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">Medication</span></a></li>
+								<li role="presentation" class="nav-item"><a href="#pmh" class="nav-link" aria-controls="pmh" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">PMH</span></a></li>
+								<li role="presentation" class="nav-item"><a href="#psh" class="nav-link" aria-controls="psh" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">PSH</span></a></li>
+								<li role="presentation" class="nav-item"><a href="#symptoms" class="nav-link" aria-controls="symptoms" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">Symptoms</span></a></li>
+								<li role="presentation" class="nav-item"><a href="#signs" class="nav-link" aria-controls="signs" role="tab" data-toggle="tab" aria-expanded="false"><span class="visible-xs"><i class="ti-settings"></i></span> <span class="hidden-xs">Signs</span></a></li>
+                                    <li class="dropdown nav-item" role="presentation">
+                                        <a aria-controls="myTabDrop1-contents" class="nav-link dropdown-toggle" data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop1" href="#" aria-expanded="false">MORE</a>
+                                        <div class="dropdown-menu" id="myTabDrop1-contents" aria-labelledby="myTabDrop1">
+                                            <a aria-controls="dropdown1" data-toggle="tab" class="dropdown-item" id="dropdown1-tab" role="tab" href="#vitals" aria-expanded="false">Vitals</a>
+                                            <a aria-controls="dropdown2" data-toggle="tab" class="dropdown-item" id="dropdown2-tab" role="tab" href="#general" aria-expanded="false">General Exam</a>
+                                            <a aria-controls="dropdown2" data-toggle="tab" class="dropdown-item" id="dropdown3-tab" role="tab" href="#diagnosis" aria-expanded="false">Diagnosis</a>
+                                            <a aria-controls="dropdown2" data-toggle="tab" class="dropdown-item" id="dropdown4-tab" role="tab" href="#drugs" aria-expanded="false">Drugs</a>
+                                            <a aria-controls="dropdown2" data-toggle="tab" class="dropdown-item" id="dropdown5-tab" role="tab" href="#diet" aria-expanded="false">Diet</a>
+                                            <a aria-controls="dropdown2" data-toggle="tab" class="dropdown-item" id="dropdown6-tab" role="tab" href="#lab" aria-expanded="false">Lab Tests</a>
+                                            <a aria-controls="dropdown2" data-toggle="tab" class="dropdown-item" id="dropdown5-tab" role="tab" href="#report" aria-expanded="false">Reports</a>
+                                        </div>
+                                    </li>								
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="home1">
+									<form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Person Details</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">First Name</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Enter Your First Name">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group has-error">
+                                                        <label class="control-label col-md-4">Last Name</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Enter Your Last Name"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Gender</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Male</option>
+                                                                <option value="">Female</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">DOB</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Age</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Marital Status</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                <option value="Category 1">Married</option>
+                                                                <option value="Category 2">Unmarried</option>
+                                                                <option value="Category 3">Divorced </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Blood Group</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                <option value="Category 1">A</option>
+                                                                <option value="Category 2">A+</option>
+                                                                <option value="Category 3">A-</option>
+                                                                <option value="Category 4">B</option>
+                                                                <option value="Category 5">B+</option>
+                                                                <option value="Category 6">O+</option>
+                                                                <option value="Category 7">AB-</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Language</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                <option value="Category 1">English</option>
+                                                                <option value="Category 2">Hindi</option>
+                                                                <option value="Category 3">Telugu</option>
+                                                                <option value="Category 4">Tamil</option>
+                                                                <option value="Category 5">Kannada</option>
+                                                                <option value="Category 6">Marathi</option>
+                                                                <option value="Category 7">Urdu</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                                <!--<div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Membership</label>
+                                                        <div class="col-md-9">
+                                                            <div class="radio-list">
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="optionsRadios2" value="option1"> Free </label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="optionsRadios2" value="option2" checked=""> Professional </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Aadhar No</label>
+                                                        <div class="col-md-8">
+														<input type="text" class="form-control" placeholder="XXXX XXXX XXXX"> </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Occupation</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                <option value="Category 1">Employed</option>
+                                                                <option value="Category 2">Self Employed</option>
+                                                                <option value="Category 3">Student</option>
+                                                                <option value="Category 4">Ex-Serviceman</option>
+                                                                <option value="Category 5">Retired</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Religion</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                <option value="Category 1">Hindu</option>
+                                                                <option value="Category 2">Muslim</option>
+                                                                <option value="Category 3">Christian</option>
+                                                                <option value="Category 4">Sikh</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+											</div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Nationality</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                <option value="Category 1">India</option>
+                                                                <option value="Category 2">American</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Income Group</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                <option value="Category 1">Poor</option>
+                                                                <option value="Category 2">Below Poverty Line</option>
+                                                                <option value="Category 3">Middle Class</option>
+                                                                <option value="Category 4">Rich</option>
+                                                                <option value="Category 5">Very Rich</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+											</div>
+                                            <h3 class="box-title">Contact Information</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Address 1</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="House No"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Address 2</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Street/Colony Name"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Address 3</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Near By"> </div>
+                                                    </div>
+                                                </div>												
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Email</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="name@telehealthcare.com"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Personal Phone</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="98798 79879"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Home Phone</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="040 2720 2720"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Country</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option>Country 1</option>
+                                                                <option>Country 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">State</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option>State 1</option>
+                                                                <option>State 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">District</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option>District 1</option>
+                                                                <option>District 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>													
+                                                <!--/span-->
+                                            </div>
+                                            <!--/row-->
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">City</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option>City 1</option>
+                                                                <option>City 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>											
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Post Code</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="400 001"> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+											<h3 class="box-title">Emergency Contact Information</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Name</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Name here"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Relation Type</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Mother/Father/Husband"> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Phone 1</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="040 2720 2720"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Phone 2</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="78978 97897"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="profile1">
+									<form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Visits</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="messages1">
+									<form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Complaints</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="settings1">
+									<form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Allergies</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+								<div role="tabpanel" class="tab-pane fade" id="immun">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Immunization</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="family">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Family Details</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="medication">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Medication</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="pmh">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Past Medical History</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Past Medical History Notes"></textarea>
+													</div>
+												</form>											
+											</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="psh">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Past Surgical History</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<!--<div class="row">
+												<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Past Surgical Notes"></textarea>
+													</div>
+												</form>											
+											</div>-->											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="symptoms">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Symptoms</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<!--<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Symptoms Notes"></textarea>
+													</div>
+												</form>	-->										
+											</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="signs">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Signs</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<!--<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Signs Notes"></textarea>
+													</div>
+												</form>	-->										
+											</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="vitals">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Vitals</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<!--<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Vital Detail Notes"></textarea>
+													</div>
+												</form>-->											
+											</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="general">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">General Exam</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<!--<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient General Exam Notes"></textarea>
+													</div>
+												</form>	-->										
+											</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="diagnosis">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Diagnosis Details</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<!--<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Diagnosis Notes"></textarea>
+													</div>
+												</form>	-->										
+											</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>	
+                                <div role="tabpanel" class="tab-pane fade" id="drugs">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Drug Details</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<!--<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Drug Notes"></textarea>
+													</div>
+												</form>-->											
+											</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="diet">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Diet</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<!--<form method="post">
+													<div class="form-group col-lg-12">
+														<textarea class="textarea_editor form-control" rows="15" placeholder="Patient Diet Notes"></textarea>
+													</div>
+												</form>-->											
+											</div>
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="lab">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Lab Records</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<form action="#" class="dropzone col-md-12">
+													<div class="fallback">
+														<input name="file" type="file" multiple /> </div>
+												</form>			
+											</div>
+											<div class="clearfix">&nbsp;</div>											
+											<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="report">
+                                    <form action="#" class="form-horizontal">
+                                        <div class="form-body">
+                                            <h3 class="box-title">Patient Reports</h3>
+                                            <hr class="m-t-0 m-b-20">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Record No.</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="Ranjan050182"> <!--<span class="help-block"> This is inline help </span>--> </div>
+                                                    </div>
+                                                </div>												
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Episode ID</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="E1V1">  </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Visit Date</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" > </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Select Box</label>
+                                                        <div class="col-md-8">
+                                                            <select class="form-control">
+                                                                <option value="">Option 1</option>
+                                                                <option value="">Option 2</option>
+                                                            </select> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="date" class="form-control" placeholder="dd/mm/yyyy"> </div>
+                                                    </div>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-4">Option</label>
+                                                        <div class="col-md-8">
+                                                            <input type="text" class="form-control" placeholder="21"> </div>
+                                                    </div>
+                                                </div>												
+                                                <!--/span-->
+                                            </div>
+											<div class="row">
+												<form action="#" class="dropzone col-md-12">
+													<div class="fallback">
+														<input name="file" type="file" multiple /> </div>
+												</form>			
+											</div>
+											<div class="clearfix">&nbsp;</div>
+										<div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn btn-primary btn-rounded"><i class="fa fa-check"></i> Submit</button>
+                                                            <button type="button" class="btn btn-default btn-rounded"><i class="fa fa-times"></i> Cancel</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"> </div>
+                                            </div>
+                                         </div>
+										</div>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                </div>								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/row -->
+                <!-- .right-sidebar -->
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title">  <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="r-panel-body">
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Available</b></li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/d1.jpg" alt="user-img" class="img-circle"> <span>Dr. Sooraj<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/d3.jpg" alt="user-img" class="img-circle"> <span>Dr. Srinija <small class="text-warning">Away</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/d2.jpg" alt="user-img" class="img-circle"> <span>Dr. Rajesh<small class="text-danger">Busy</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/d4.jpg" alt="user-img" class="img-circle"> <span>Dr. Aman <small class="text-muted">Offline</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Mr. Joseph <small class="text-success">online</small></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.right-sidebar -->
+            </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 2018 &copy; TeleHealthcare. Powered by Cybermate Infotek Ltd.,</footer>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/tether.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!--Style Switcher -->
+    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+	<!-- Dropzone Plugin JavaScript -->
+    <script src="../plugins/bower_components/dropzone-master/dist/dropzone.js"></script>
+    <!-- wysuhtml5 Plugin JavaScript -->
+    <script src="../plugins/bower_components/html5-editor/wysihtml5-0.3.0.js"></script>
+    <script src="../plugins/bower_components/html5-editor/bootstrap-wysihtml5.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.textarea_editor').wysihtml5();
+    });
+    </script>	
+</body>
+</html>
